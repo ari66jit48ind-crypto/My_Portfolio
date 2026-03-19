@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arijit Saha · Aspiring Product Security Engineer</title>
+    <style>
+        /* reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e8eae3;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+
+        /* main card */
+        .resume {
+            max-width: 900px;
+            width: 100%;
+            background: #fcfaf5;
+            box-shadow: 6px 8px 0 #c0bcb0;
+            border: 1px solid #b8b4a7;
+            padding: 2rem 2.2rem;
+        }
+
+        /* header section */
+        .header {
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #c8c2b0;
+            padding-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #1e2b3a;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 0.3rem;
+        }
+
+        .header .title {
+            font-size: 1.2rem;
+            background: #e5e0d3;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border: 1px solid #b9af9a;
+            color: #2c3e4e;
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        /* contact grid */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+            margin: 1rem 0 0.5rem 0;
+            padding: 0.8rem 0;
+            border-top: 1px solid #dad5c8;
+            border-bottom: 1px solid #dad5c8;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.98rem;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #2c4b6c;
+            border-bottom: 1px dotted #9f9b8c;
+        }
+
+        .contact-item a:hover {
+            border-bottom: 2px solid #5f6a4b;
+        }
+
+        .emoji {
+            font-size: 1.2rem;
+        }
+
+        /* main columns */
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        /* left panel */
+        .left-panel h2, .right-panel h2 {
+            font-size: 1.4rem;
+            font-weight: 550;
+            border-left: 6px solid #8b9c9c;
+            padding-left: 0.7rem;
+            margin: 1.5rem 0 1rem 0;
+            color: #1e3a4a;
+        }
+
+        .left-panel h2:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        /* summary */
+        .summary {
+            background: #edf1f0;
+            padding: 1rem 1.2rem;
+            border: 1px solid #cad1cc;
+            font-size: 0.98rem;
+            margin-bottom: 1.5rem;
+            color: #1f3a47;
+            border-radius: 4px;
+        }
+
+        /* education */
+        .edu-item {
+            margin-bottom: 1.4rem;
+        }
+
+        .edu-item h3 {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a3b49;
+        }
+
+        .edu-item .meta {
+            color: #557571;
+            font-size: 0.9rem;
+            font-style: italic;
+            padding-left: 0.6rem;
+            margin: 0.2rem 0 0.3rem 0;
+            border-left: 3px solid #b7c9c2;
+        }
+
+        /* skills */
+        .skill-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #4f7a7a;
+            font-weight: bold;
+        }
+
+        /* languages */
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.2rem 0;
+            border-bottom: 1px dotted #d0d7cf;
+        }
+
+        .lang-name {
+            font-weight: 500;
+            color: #1e4343;
+        }
+
+        .lang-level {
+            color: #5d7770;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* right panel */
+        .exp-item {
+            margin-bottom: 1.8rem;
+        }
+
+        .exp-item h3 {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #173e4a;
+            margin-bottom: 0.2rem;
+        }
+
+        .exp-item .org {
+            font-weight: 500;
+            color: #4f6d6b;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-item .date {
+            font-size: 0.85rem;
+            background: #e2e9e3;
+            padding: 0.15rem 0.7rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 0.3rem 0;
+            color: #2c5a5a;
+        }
+
+        .exp-item p {
+            font-size: 0.95rem;
+            color: #2c4340;
+            margin-top: 0.3rem;
+        }
+
+        /* links section */
+        .links-box {
+            background: #edf3f0;
+            padding: 1rem;
+            border: 1px solid #c4d2cb;
+            margin: 1.5rem 0;
+        }
+
+        .links-box a {
+            color: #1f5f6b;
+            text-decoration: underline wavy #acc7bc 1.5px;
+            word-break: break-all;
+        }
+
+        .links-box a:hover {
+            color: #0d3d47;
+        }
+
+        .footnote {
+            margin-top: 2rem;
+            text-align: right;
+            color: #7c8f87;
+            border-top: 1px dashed #cbd6cd;
+            padding-top: 0.6rem;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Arijit Saha</h1>
+            <div class="title">Aspiring Product Security Engineer</div>
+            
+            <!-- CONTACT INFO (no picture) -->
+            <div class="contact-grid">
+                <span class="contact-item"><span class="emoji">📧</span> <a href="mailto:ari66jit48ind@gmail.com">ari66jit48ind@gmail.com</a></span>
+                <span class="contact-item"><span class="emoji">📱</span> <a href="tel:9332875470">9332875470</a></span>
+                <span class="contact-item"><span class="emoji">📍</span> Kolkata, INDIA</span>
+                <span class="contact-item"><span class="emoji">🔗</span> <a href="https://www.linkedin.com/in/arijit-saha-741b70329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></span>
+                <span class="contact-item"><span class="emoji">🐙</span> <a href="https://github.com/AI66JIT48IND-CRYPTO" target="_blank">GitHub (AI66JIT48IND-CRYPTO)</a></span>
+            </div>
+        </div>
+
+        <!-- TWO COLUMNS -->
+        <div class="columns">
+            <!-- LEFT COLUMN -->
+            <div class="left-panel">
+                <!-- ABOUT / OBJECTIVE -->
+                <h2>🎯 objective</h2>
+                <div class="summary">
+                    B.Tech CSE (Cyber Security) student preparing for a career as a Product Security Engineer. 
+                    Passionate about application security, vulnerability assessment, and building secure systems. 
+                    Eager to learn and contribute to real-world security challenges.
+                </div>
+
+                <!-- EDUCATION -->
+                <h2>📚 education</h2>
+                
+                <div class="edu-item">
+                    <h3>B.Tech CSE (Cyber Security)</h3>
+                    <div class="meta">GNIT Kolkata · 2024 – 2028</div>
+                    <p>Specializing in cybersecurity, network security, and secure coding practices.</p>
+                </div>
+                
+                <div class="edu-item">
+                    <h3>Higher Secondary (SCMS)</h3>
+                    <div class="meta">SCMS · 2022 – 2024</div>
+                </div>
+                
+                <div class="edu-item">
+                    <h3>Secondary (CJM)</h3>
+                    <div class="meta">CJM · 2011 – 2022</div>
+                </div>
+
+                <!-- SKILLS -->
+                <h2>🛠️ skills</h2>
+                <ul class="skill-list">
+                    <li><strong>Python</strong> · scripting, automation, security tools</li>
+                    <li><strong>Django</strong> · web framework basics</li>
+                    <li><strong>OWASP Top 10</strong> · understanding web vulnerabilities</li>
+                    <li><strong>AWS</strong> · cloud fundamentals (learning)</li>
+                </ul>
+
+                <!-- LANGUAGES -->
+                <h2>🗣️ languages</h2>
+                <div class="lang-item">
+                    <span class="lang-name">English</span>
+                    <span class="lang-level">fluent</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">Bengali</span>
+                    <span class="lang-level">native</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">Hindi</span>
+                    <span class="lang-level">conversational</span>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-panel">
+                <!-- JOURNEY / PREPARATION (since no formal experience yet) -->
+                <h2>🚀 security journey</h2>
+                
+                <div class="exp-item">
+                    <h3>Product Security · self-preparation</h3>
+                    <div class="org">personal learning track</div>
+                    <div class="date">2024 – present</div>
+                    <p>Studying application security, OWASP Top 10, secure SDLC, and cloud security fundamentals. Practicing on CTF platforms and building small security-focused projects.</p>
+                </div>
+
+                <div class="exp-item">
+                    <h3>Cyber Security Student</h3>
+                    <div class="org">GNIT Kolkata</div>
+                    <div class="date">2024 – 2028</div>
+                    <p>Pursuing B.Tech with focus on cybersecurity. Learning network security, cryptography, ethical hacking, and security analysis.</p>
+                </div>
+
+                <!-- PROJECTS / GITHUB -->
+                <h2>📁 code & work</h2>
+                <div class="links-box">
+                    <p><span style="font-weight: 600;">🔗 GitHub:</span> <a href="https://github.com/AI66JIT48IND-CRYPTO" target="_blank">github.com/AI66JIT48IND-CRYPTO</a></p>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem;">⚡ Exploring security tools, Python scripts, and web security concepts. Check my repos for ongoing learning projects.</p>
+                </div>
+
+                <!-- LINKEDIN HIGHLIGHT -->
+                <h2>🔗 professional</h2>
+                <div class="links-box" style="background: #f2f6f0;">
+                    <p><span style="font-weight: 600;">💼 LinkedIn:</span> <a href="https://www.linkedin.com/in/arijit-saha-741b70329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/arijit-saha-741b70329</a></p>
+                    <p style="margin-top: 0.3rem; color: #4f6e6b;">Building my professional network in cybersecurity.</p>
+                </div>
+
+                <!-- AREAS OF INTEREST -->
+                <h2 style="margin-top: 1.8rem;">🔐 focus areas</h2>
+                <ul class="skill-list" style="margin-bottom: 0;">
+                    <li>Application Security</li>
+                    <li>OWASP Top 10</li>
+                    <li>Secure Code Review</li>
+                    <li>Cloud Security (AWS)</li>
+                    <li>Vulnerability Assessment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SIMPLE FOOTER -->
+        <div class="footnote">
+            ⚡ B.Tech CSE (Cyber Security) · preparing for product security · #learningeveryday
+        </div>
+    </div>
+</body>
+</html>
